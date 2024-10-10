@@ -5,4 +5,5 @@ pip install openpyxl
 pip install numpy
 pip install tkinter
 pip install matplot
+python main.py
 ```
