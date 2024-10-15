@@ -1,4 +1,10 @@
-Comandos a serem utilizados antes de executar o código:
+## Bibliotecas utilizadas
+- Numpy;
+- Pandas;
+- Tkinter;
+- Matplot;
+  
+## Comandos a serem utilizados antes de executar o código:
 ```
 pip install pandas
 pip install openpyxl
