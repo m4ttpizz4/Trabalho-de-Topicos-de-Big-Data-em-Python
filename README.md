@@ -3,7 +3,7 @@
 - Pandas;
 - Tkinter;
 - Matplot;
-  
+- Openpyxl;
 ## Comandos a serem utilizados antes de executar o código:
 ```
 pip install pandas
