@@ -13,7 +13,7 @@ mouse_press = False
 mouse_start_x = 0
 mouse_start_y = 0
 
-#função para alternar entre modos escuro no menú inicial:
+#função para alternar entre modo escuro no menú inicial:
 def alternar_modo():
     global modo_escuro
     modo_escuro = not modo_escuro
@@ -63,7 +63,7 @@ def carregar_planilha():
 
 #função para recriar e redesenhar o gráfico quando alternar modo:
 def redesenhar_grafico(fig, ax, estados, inseguranca, tipo_grafico):
-    ax.clear()  # Limpa o gráfico para redesenhar
+    ax.clear()
     cor_grafico = 'white' if modo_escuro else 'black'
     cor_fundo = '#2E2E2E' if modo_escuro else 'white'
 
@@ -92,29 +92,29 @@ def redesenhar_grafico(fig, ax, estados, inseguranca, tipo_grafico):
 
 #função para gerar gráfico de barras com os estados:
 def gerar_grafico_barras(estados, inseguranca):
-    print("Gerando gráfico de barras...")  # Verificação de chamada
-    fig, ax = plt.subplots(figsize=(10, 6))  # Tamanho do gráfico ajustado
+    print("Gerando gráfico de barras...")
+    fig, ax = plt.subplots(figsize=(10, 6)) 
     desenhar_canvas(fig)
     redesenhar_grafico(fig, ax, estados, inseguranca, "Barras")
 
 #função para gerar gráfico de pizza:
 def gerar_grafico_pizza(estados, inseguranca):
-    print("Gerando gráfico de pizza...")  # Verificação de chamada
+    print("Gerando gráfico de pizza...") 
     fig, ax = plt.subplots(figsize=(8, 8))
     desenhar_canvas(fig)
     redesenhar_grafico(fig, ax, estados, inseguranca, "Pizza")
 
 #função para gerar gráfico de linhas:
 def gerar_grafico_linhas(estados, inseguranca):
-    print("Gerando gráfico de linhas...")  # Verificação de chamada
-    fig, ax = plt.subplots(figsize=(10, 6))  # Tamanho do gráfico ajustado
+    print("Gerando gráfico de linhas...")  
+    fig, ax = plt.subplots(figsize=(10, 6))
     desenhar_canvas(fig)
     redesenhar_grafico(fig, ax, estados, inseguranca, "Linhas")
 
 #função para gerar gráfico de dispersão:
 def gerar_grafico_dispersao(estados, inseguranca):
-    print("Gerando gráfico de dispersão...")  # Verificação de chamada
-    fig, ax = plt.subplots(figsize=(10, 6))  # Tamanho do gráfico ajustado
+    print("Gerando gráfico de dispersão...")
+    fig, ax = plt.subplots(figsize=(10, 6))
     desenhar_canvas(fig)
     redesenhar_grafico(fig, ax, estados, inseguranca, "Dispersão")
 
