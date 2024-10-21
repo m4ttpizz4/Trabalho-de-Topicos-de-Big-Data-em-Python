@@ -24,3 +24,7 @@ pip install tkinter
 pip install matplot
 python main.py
 ```
+
+> [!NOTE]
+> Esse projeto foi desenvolvido utilizando a linguagem: \
+> ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=yellow)
