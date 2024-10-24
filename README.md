@@ -16,7 +16,7 @@
 - Openpyxl;
 
 ## Comandos a serem utilizados antes de executar o código:
-```
+```pip
 pip install pandas
 pip install openpyxl
 pip install numpy
