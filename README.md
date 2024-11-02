@@ -15,7 +15,7 @@
 - Matplot;
 - Openpyxl;
 
-## Comandos a serem utilizados antes de executar o código:
+## Comandos a serem utilizados antes de executar o código (com interface):
 ```pip
 pip install pandas
 pip install openpyxl
