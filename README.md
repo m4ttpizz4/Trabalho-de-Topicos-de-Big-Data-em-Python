@@ -19,7 +19,7 @@
 ## 📊 Gráfico do estudo da Segurança Alimentar nos Estados do Brasil(2013 - 2023):
 ![Segurança Alimentar dos estados Brasileiros de (2013-2023)](https://github.com/user-attachments/assets/83a5247c-6f71-4c24-8a50-4a9f328e4e3e)
 > [!NOTE]
-> Dados disponibilizados pelo [IBGE](https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/39838-seguranca-alimentar-nos-domicilios-brasileiros-volta-a-crescer-em-2023), extração e transformação de dados por [Mateus Cipriano](https://github.com/m4ttpizz4).
+> Dados disponibilizados pelo [IBGE](https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/39838-seguranca-alimentar-nos-domicilios-brasileiros-volta-a-crescer-em-2023), transformação de dados por [Mateus Cipriano](https://github.com/m4ttpizz4).
 
 ## 💻 Comandos a serem utilizados antes de executar o código (com interface):
 ```pip
