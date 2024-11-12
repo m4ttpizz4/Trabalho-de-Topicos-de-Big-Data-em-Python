@@ -9,7 +9,7 @@
 
 - [Mateus Cipriano](https://github.com/m4ttpizz4)
   
-## 📚 Bibliotecas utilizadas:
+## 📚 Bibliotecas/Frameworks utilizadas:
 - ![Numpy](https://img.shields.io/badge/Numpy-E34F26?style=plastic)
 - ![Pandas](https://img.shields.io/badge/Pandas-E34F26?style=plastic)
 - ![Tkinter](https://img.shields.io/badge/Tkinter-E34F26?style=plastic)
