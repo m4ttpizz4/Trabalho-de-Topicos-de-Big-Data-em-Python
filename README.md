@@ -31,6 +31,12 @@ pip install matplot
 python main.py
 ```
 
+## ✔️ Conclusão do projeto:
+  O projeto foi apresentado na instituição de ensino [Estácio de Sá(Campus Parangaba)](https://estacio.br/a-estacio/unidades/parangaba) \
+e constatamos que, depois de toda a pesquisa, os anos onde a fome foi mais agravante, foram entre os anos de 2020 a 2022 e, a partir do ano \
+de 2022, ainda houve sequelas da pandemia, visto que, a falta de politicas públicas propostas pelo governo federal, agravou e tornou essa \
+sequela pós-pandemia bem evidente nas classes mais baixas, tanto durante quanto depois da COVID-19.
+
 > [!NOTE]
 > Esse projeto foi desenvolvido utilizando: \
 > ![Git](https://img.shields.io/badge/Git-E34F26?style=plastic&logo=git&logoColor=white)
