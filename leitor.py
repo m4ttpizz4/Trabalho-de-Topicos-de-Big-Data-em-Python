@@ -32,6 +32,7 @@ def alternar_modo():
         btn_personalizar.configure(bg='lightgray', fg='black')
 
 #função para abrir o arquivo e carregar os dados:
+# Função para carregar a planilha e gerar gráficos com base nas colunas '2013-2014', '2017-2018' e '2022-2023'
 def carregar_planilha():
     arquivo = filedialog.askopenfilename(filetypes=[("Planilhas Excel", "*.xlsx"), ("CSV Files", "*.csv")])
     if arquivo:
@@ -43,21 +44,23 @@ def carregar_planilha():
 
             print(dados.head())
 
-            if 'Estados' in dados.columns and 'Moradias' in dados.columns:
+            if all(col in dados.columns for col in ['Estados', '2013-2014', '2017-2018', '2022-2023']):
                 array_estados = np.array(dados['Estados'])
-                array_inseguranca = np.array(dados['Moradias'])
+                array_2013_2014 = np.array(dados['2013-2014'])
+                array_2017_2018 = np.array(dados['2017-2018'])
+                array_2022_2023 = np.array(dados['2022-2023'])
                 tipo_grafico = combo_grafico.get()
                 print(f"Tipo de gráfico selecionado: {tipo_grafico}")
                 if tipo_grafico == "Barras":
-                    gerar_grafico_barras(array_estados, array_inseguranca)
+                    gerar_grafico_barras(array_estados, array_2013_2014, array_2017_2018, array_2022_2023)
                 elif tipo_grafico == "Pizza":
-                    gerar_grafico_pizza(array_estados, array_inseguranca)
+                    gerar_grafico_pizza(array_estados, array_2013_2014, array_2017_2018, array_2022_2023)
                 elif tipo_grafico == "Linhas":
-                    gerar_grafico_linhas(array_estados, array_inseguranca)
+                    gerar_grafico_linhas(array_estados, array_2013_2014, array_2017_2018, array_2022_2023)
                 else:
-                    gerar_grafico_dispersao(array_estados, array_inseguranca)
+                    gerar_grafico_dispersao(array_estados, array_2013_2014, array_2017_2018, array_2022_2023)
             else:
-                print("A planilha precisa conter as colunas 'Estados' e 'Moradias'.")
+                print("A planilha precisa conter as colunas 'Estados', '2013-2014', '2017-2018' e '2022-2023'.")
         except Exception as e:
             print(f"Erro ao carregar a planilha: {e}")
 
@@ -68,51 +71,58 @@ def redesenhar_grafico(fig, ax, estados, inseguranca, tipo_grafico):
     cor_fundo = '#2E2E2E' if modo_escuro else 'white'
 
     if tipo_grafico == "Barras":
-        ax.barh(estados, inseguranca, color='salmon')
+        for i, ano in enumerate(['2013-2014', '2017-2018', '2022-2023']):
+            ax.barh(estados, inseguranca[i], label=ano)
         ax.set_xlabel('Moradias', color=cor_grafico)
         ax.set_ylabel('Estados', color=cor_grafico)
         ax.set_title('Distribuição de Moradias por Estado', color=cor_grafico)
         ax.tick_params(axis='y', labelsize=10)
+        ax.legend()
     elif tipo_grafico == "Pizza":
-        ax.pie(inseguranca, labels=estados, autopct='%1.1f%%', startangle=140, colors=plt.cm.Paired.colors)
-        ax.set_title('Distribuição Proporcional de Moradias por Estado', color=cor_grafico)
+        for i, ano in enumerate(['2013-2014', '2017-2018', '2022-2023']):
+            ax.pie(inseguranca[i], labels=estados, autopct='%1.1f%%', startangle=140, colors=plt.cm.Paired.colors)
+            ax.set_title(f'Distribuição Proporcional de Moradias por Estado ({ano})', color=cor_grafico)
     elif tipo_grafico == "Linhas":
-        ax.plot(estados, inseguranca, marker='o', linestyle='-', color='orange')
+        for i, ano in enumerate(['2013-2014', '2017-2018', '2022-2023']):
+            ax.plot(estados, inseguranca[i], marker='o', linestyle='-', label=ano)
         ax.set_xlabel('Estados', color=cor_grafico)
         ax.set_ylabel('Moradias', color=cor_grafico)
         ax.set_title('Evolução de Moradias por Estado', color=cor_grafico)
         ax.tick_params(axis='x', labelsize=10)
+        ax.legend()
     else:
-        ax.scatter(estados, inseguranca, c=inseguranca, cmap='coolwarm', s=100)
+        for i, ano in enumerate(['2013-2014', '2017-2018', '2022-2023']):
+            ax.scatter(estados, inseguranca[i], label=ano)
         ax.set_xlabel('Estados', color=cor_grafico)
         ax.set_ylabel('Moradias', color=cor_grafico)
         ax.set_title('Dispersão de Moradias por Estado', color=cor_grafico)
         ax.set_facecolor(cor_fundo)
-        fig.canvas.draw()
+        ax.legend()
+    fig.canvas.draw()
 
 #função para gerar gráfico de barras com os estados:
-def gerar_grafico_barras(estados, inseguranca):
+def gerar_grafico_barras(estados, *inseguranca):
     print("Gerando gráfico de barras...")
-    fig, ax = plt.subplots(figsize=(10, 6)) 
+    fig, ax = plt.subplots(figsize=(10, 6))
     desenhar_canvas(fig)
     redesenhar_grafico(fig, ax, estados, inseguranca, "Barras")
 
 #função para gerar gráfico de pizza:
-def gerar_grafico_pizza(estados, inseguranca):
+def gerar_grafico_pizza(estados, *inseguranca):
     print("Gerando gráfico de pizza...") 
     fig, ax = plt.subplots(figsize=(8, 8))
     desenhar_canvas(fig)
     redesenhar_grafico(fig, ax, estados, inseguranca, "Pizza")
 
 #função para gerar gráfico de linhas:
-def gerar_grafico_linhas(estados, inseguranca):
+def gerar_grafico_linhas(estados, *inseguranca):
     print("Gerando gráfico de linhas...")  
     fig, ax = plt.subplots(figsize=(10, 6))
     desenhar_canvas(fig)
     redesenhar_grafico(fig, ax, estados, inseguranca, "Linhas")
 
 #função para gerar gráfico de dispersão:
-def gerar_grafico_dispersao(estados, inseguranca):
+def gerar_grafico_dispersao(estados, *inseguranca):
     print("Gerando gráfico de dispersão...")
     fig, ax = plt.subplots(figsize=(10, 6))
     desenhar_canvas(fig)

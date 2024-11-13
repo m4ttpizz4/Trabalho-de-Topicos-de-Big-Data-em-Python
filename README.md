@@ -9,12 +9,12 @@
 
 - [Mateus Cipriano](https://github.com/m4ttpizz4)
   
-## 📚 Bibliotecas utilizadas:
-- Numpy;
-- Pandas;
-- Tkinter;
-- Matplot;
-- Openpyxl;
+## 📚 Bibliotecas/Frameworks utilizadas:
+- ![Numpy](https://img.shields.io/badge/Numpy-E34F26?style=plastic)
+- ![Pandas](https://img.shields.io/badge/Pandas-E34F26?style=plastic)
+- ![Tkinter](https://img.shields.io/badge/Tkinter-E34F26?style=plastic)
+- ![Matplot](https://img.shields.io/badge/Matplot-E34F26?style=plastic)
+- ![Openpyxl](https://img.shields.io/badge/Openpyxl-E34F26?style=plastic)
 
 ## 📊 Gráfico do estudo da Segurança Alimentar nos Estados do Brasil(2013 - 2023):
 ![Segurança Alimentar dos estados Brasileiros de (2013-2023)](https://github.com/user-attachments/assets/83a5247c-6f71-4c24-8a50-4a9f328e4e3e)
