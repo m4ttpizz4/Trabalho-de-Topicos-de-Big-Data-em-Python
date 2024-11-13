@@ -205,11 +205,6 @@ cor_fundo = 'white'
 cor_botao = 'lightgray'
 cor_texto = 'black'
 
-#botão para selecionar planilha:
-btn_selecionar = tk.Button(root, text="Selecionar Planilha", command=carregar_planilha, font=('Arial', 14),
-bg=cor_botao, fg=cor_texto)
-btn_selecionar.pack(pady=10)
-
 #botão para alternar modo escuro:
 btn_modo = tk.Button(root, text="Modo Escuro", command=alternar_modo, font=('Arial', 12), 
 bg=cor_botao, fg=cor_texto)
@@ -219,6 +214,11 @@ btn_modo.pack(pady=10)
 btn_reset = tk.Button(root, text="Resetar Gráfico", command=resetar_grafico, font=('Arial', 12), 
 bg=cor_botao, fg=cor_texto)
 btn_reset.pack(pady=10)
+
+#botão para selecionar planilha:
+btn_selecionar = tk.Button(root, text="Selecionar Planilha", command=carregar_planilha, font=('Arial', 12),
+bg=cor_botao, fg=cor_texto)
+btn_selecionar.pack(pady=10)
 
 #botão para personalizar o gráfico:
 btn_personalizar = tk.Button(root, text="Personalizar Gráfico", command=personalizar_grafico, font=('Arial', 12),
